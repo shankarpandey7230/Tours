@@ -5,8 +5,9 @@ import Service from './Service';
 
 const Services = () => {
   return (
-    <section className="section service text-center " id="services">
-      <Title title="Our" subTitle="services" />
+    <section className="section services" id="services">
+      <Title title="our" subTitle="services" />
+
       <div className="section-center services-center">
         {services.map((service) => {
           return <Service {...service} key={service.id} />;
@@ -15,5 +16,4 @@ const Services = () => {
     </section>
   );
 };
-
 export default Services;
