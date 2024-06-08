@@ -6,9 +6,32 @@
 html {
   scroll-behavior: smooth;
 }
-
+ul {
+  list-style-type: none;
+}
+h1,
+h2,
+h3 {
+  color: antiquewhite;
+  margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+h2,
+h3 {
+  color: #222;
+}
+.title {
+  margin-bottom: 3rem;
+  font-style: bold;
+  text-shadow: #222;
+}
+.section {
+  scroll-margin-top: 4rem;
+}
 /* add :not(.nav-logo) to img */
-
+/* NAvBar */
 .navbar {
   position: fixed;
   top: 0;
@@ -115,3 +138,45 @@ html {
 /* set hero to 
 min-height:calc(100vh - 62px);
 */
+
+/* Hero */
+
+.hero-banner p {
+  max-width: 35rem;
+  letter-spacing: 0.25rem;
+  color: whitesmoke;
+}
+
+.hero {
+  min-height: calc(100vh - 62px);
+  background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
+    url('./assets/images/tour-1.jpeg') center/cover no-repeat;
+}
+
+/* about */
+.about-img {
+  position: relative;
+}
+.about-photo {
+  position: relative;
+}
+@media screen and (min-width: 992px) {
+  .about-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+  .about-img,
+  .about-info {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .about-img::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.5rem solid grey;
+  }
+}

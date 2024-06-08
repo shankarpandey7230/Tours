@@ -10,7 +10,7 @@ const NavBar = () => {
     <nav className="navbar w-100 d-flex align-items-center shadow-lg bg-white z-2">
       <div
         className="nav-center mx-auto"
-        style={{ width: '90vw', 'max-width': '1170px' }}
+        style={{ width: '90vw', maxWidth: '1170px' }}
       >
         <div className="nav-header d-flex justify-content-between align-items-center">
           <img
@@ -22,10 +22,10 @@ const NavBar = () => {
             className="nav-toggle bg-transparent text-dark"
             id="nav-toggle"
           >
-            <i class="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
           </button>
         </div>
-        <PageLinks parentClass="nav-links d-flex  " itemClass="nav-link fs-1" />
+        <PageLinks parentClass="nav-links d-flex  " itemClass="nav-link " />
 
         <ul className="nav-icons">
           {socialLinks.map((link) => {
