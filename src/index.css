@@ -9,6 +9,7 @@ html {
 ul {
   list-style-type: none;
 }
+
 h1,
 h2,
 h3 {
@@ -213,4 +214,43 @@ min-height:calc(100vh - 62px);
   .service-title {
     margin-bottom: 0.5rem;
   }
+}
+
+/* tours */
+
+@media screen and (min-width: 768px) {
+  .featured-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .featured-center {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.tour-card {
+  transition: all 0.3s ease-in-out;
+}
+.tour-card:hover {
+  transform: scale(1.02);
+}
+
+.tour-img-container {
+  position: relative;
+}
+.tour-date {
+  right: 0;
+  bottom: -20px;
+  background: hsl(184, 80%, 74%);
+  color: hsl(184, 91%, 17%);
+  text-transform: capitalize;
+  border-radius: 2px;
+  padding: 5px;
+}
+.tour-title p,
+.tour-title h4 {
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
 }
