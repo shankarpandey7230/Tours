@@ -254,3 +254,27 @@ min-height:calc(100vh - 62px);
   margin-bottom: 0.75rem;
   line-height: 1.25;
 }
+
+/* footer */
+.footer-links,
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer-link {
+  text-transform: capitalize;
+  margin-right: 1rem;
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+.footer-icon {
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.copyright {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
