@@ -4,11 +4,11 @@ import Title from './Title';
 
 const About = () => {
   return (
-    <section className="section text-center pt-5" id="about">
+    <section className="section text-center p-t-5 m-t-5 " id="about">
       <Title title="about" subTitle="us" />
       <div
         className=" mx-auto  about-center"
-        style={{ width: '90vw', 'max-width': '992px' }}
+        style={{ width: '90vw', maxWidth: '992px' }}
       >
         <div className="about-img mb-5 ">
           <img
@@ -18,7 +18,7 @@ const About = () => {
           />
         </div>
         <article className="about-info mb-5">
-          <h3 class="text-uppercase mb-4">explore the difference</h3>
+          <h3 className="text-uppercase mb-4">explore the difference</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur
             quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
