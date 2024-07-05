@@ -1,20 +1,35 @@
-import NavBar from './components/NavBar.js';
-import Hero from './components/Hero.js';
-import About from './components/About.js';
 import './index.css';
-import Services from './components/Services';
+import React, { useState, useEffect } from 'react';
+
+import Loading from './components/Loading';
 import Tours from './components/Tours';
-import Footer from './components/Footer';
+const url = 'https://www.course-api.com/react-tours-project';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [tours, setTours] = useState([]);
+  const removeTour = () => {};
+  const fetchTours = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(url);
+      const tours = await response.json();
+      console.log(tours);
+      setLoading(false);
+      setTours(tours);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchTours();
+  }, []);
+
   return (
     <div className="App">
-      <NavBar />
-      <Hero />
-      <About />
-      <Services />
-      <Tours />
-      <Footer />
+      <Loading />
+      <Tours tours={tours} removeTour={removeTour} />
     </div>
   );
 }
