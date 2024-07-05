@@ -25,12 +25,18 @@ function App() {
   useEffect(() => {
     fetchTours();
   }, []);
-
+  if (loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+  }
+  // TODO
   return (
-    <div className="App">
-      <Loading />
+    <main>
       <Tours tours={tours} removeTour={removeTour} />
-    </div>
+    </main>
   );
 }
 

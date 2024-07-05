@@ -35,5 +35,5 @@ Overall, the flow of the application will look like:
 > > The Tours will then map over the tours array and renders a Tour component for each tour.
 > > Each Tour component will have a "remove tour " button and a "read more button".
 > >
-> > > > > > > When remove button is clicked the tour will be removed and the state will be updated , when read more is clicked Tour component will be updates its state to toggle and render
-> > > > > > > When the "re-fetch" button is clicked, the Tours component re-fetches the tours data from the URL and updates its state
+> > > > > When remove button is clicked the tour will be removed and the state will be updated , when read more is clicked Tour component will be updates its state to toggle and render
+> > > > > When the "re-fetch" button is clicked, the Tours component re-fetches the tours data from the URL and updates its state
