@@ -1,16 +1,15 @@
 import React from 'react';
-import { tours } from '../data.js';
-import Title from './Title.js';
-
 import Tour from './Tour';
-
-const Tours = () => {
+const Tours = ({ tours, removeTour }) => {
   return (
-    <section className="section" id="tours">
-      <Title title="featured" subtitle="tours" />
-      <div className="section-center featured-center">
+    <section>
+      <div className="title">
+        <h2>our tours</h2>
+        <div className="title-underline"></div>
+      </div>
+      <div className="tours">
         {tours.map((tour) => {
-          return <Tour {...tour} key={tour.id} />;
+          return <Tour key={tour.id} {...tour} removeTour={removeTour} />;
         })}
       </div>
     </section>

@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+## Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    Create 3 components:
+     - Tours
+     - Tour
+     - Loading
 
-## Available Scripts
+`In each of these components we will define a React functional component that returns JSX code for rendering the respective component`
 
-In the project directory, you can run:
+## Fetch Tours
 
-### `npm start`
+    The Tours component will be responsible for rendering the list of Tour Components.
+    In App component the tours data will be fetched from a URL using fetch API.
+    Loading spinner will be displayed before the data is loaded which will be implemented using the Loading Component.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Render Tours
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Once the data is loaded, we can set the state of our component to store tours data. Then mapping will happen over the tours array and render a Tour Component for each tour. Each Tour component will receive the tour data as props, including the tour's id, image, info, name and price.
 
-### `npm test`
+## Remove Tours:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    For implementation of this functionality, we will add a button to each of Tour Component when clicked will remove the tour from the list of tours. We will get this by updating the state of Tours Component to remove the tour from the tours array.
 
-### `npm run build`
+## Read More:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To implement this function, we will add a button to each Tour Component when clicked will expand the description of tour. We will achieve this function by updating the state of Tour Component to toggle a 'read more' and rendering it conditionally based on the condition.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Re-fetch Tours
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To implement this function, we will add a button or other user interface element that when clicked will re-fetch the tours data form the URL and update the state of Tours. We can also add a loading state again during the re-fetching process.
 
-### `npm run eject`
+Overall, the flow of the application will look like:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> > App component will fetch tours data from a URL and will set the state of Tours to store the data.
+> > The Tours will then map over the tours array and renders a Tour component for each tour.
+> > Each Tour component will have a "remove tour " button and a "read more button".
+> >
+> > > > > When remove button is clicked the tour will be removed and the state will be updated , when read more is clicked Tour component will be updates its state to toggle and render
+> > > > > When the "re-fetch" button is clicked, the Tours component re-fetches the tours data from the URL and updates its state

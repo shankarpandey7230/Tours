@@ -1,32 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Tour = ({ image, date, title, info, location, duration, cost }) => {
+const Tour = ({ id, image, info, name, price, removeTour }) => {
+  const [readMore, setReadMore] = useState(false);
   return (
-    <article className="tour-card shadow-lg mb-5 p-3 text-center">
-      <div className="tour-img-container ">
-        <img
-          src={image}
-          alt={title}
-          className="tour-img"
-          style={{ height: '15rem', width: '100%', objectFit: 'cover' }}
-        />
-        <p className="tour-date position-absolute">{date}</p>
-      </div>
-      <div className="tour-info p-4 ">
-        <div className="tour-title d-flex justify-content-center">
-          <h4>{title}</h4>
-        </div>
-        <p>{info}</p>
-        <div className="tour-footer d-flex justify-content-between flex-wrap align-items-center p-2">
-          <p className="text-capitalize">
-            <span>
-              <i className="fas fa-map mx-3 text-primary"></i>
-            </span>
-            {location}
-          </p>
-          <p className="text-capitalize">from ${cost}</p>
-          <p className="text-capitalize">{duration} days</p>
-        </div>
+    <article className="single-tour">
+      <img src={image} alt={name} className="img" />
+      <span className="tour-price">${price}</span>
+      <div className="tour-info">
+        <h5>{name}</h5>
+
+        <p>
+          {readMore ? info : `${info.substring(0, 200)}...`}
+          <button className="info-btn" onClick={() => setReadMore(!readMore)}>
+            {readMore ? 'show less' : '  read more'}
+          </button>
+        </p>
+        <button
+          className="delete-btn btn-block btn"
+          onClick={() => removeTour(id)}
+        >
+          not interested
+        </button>
       </div>
     </article>
   );
