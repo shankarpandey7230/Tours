@@ -36,6 +36,22 @@ function App() {
     );
   }
   // TODO
+  if (tours.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>no tours left</h2>
+          <button
+            className="btn"
+            onClick={() => fetchTours()}
+            style={{ marginTop: '4rem' }}
+          >
+            Refresh
+          </button>
+        </div>
+      </main>
+    );
+  }
   return (
     <main>
       <Tours tours={tours} removeTour={removeTour} />
