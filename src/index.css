@@ -269,6 +269,8 @@ main {
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-1);
   transition: var(--transition);
+  height: 40rem;
+
   /* for tour price */
   position: relative;
 }
